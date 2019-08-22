@@ -1,12 +1,12 @@
 version: 2.1
 
 workflows:
-  runtest:
+  build:
     jobs:
-      - build-erd
+      - erd
 
 jobs:
-  build-erd:
+  erd:
     docker:
       - image: schemaspy/schemaspy:snapshot
         user: root
