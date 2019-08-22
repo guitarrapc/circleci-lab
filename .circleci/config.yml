@@ -1,10 +1,9 @@
-version: 2.1
-
-workflows:
-  build:
-    jobs:
-      - build-erd
-
+# version: 2.1
+# workflows:
+#   build:
+#     jobs:
+#       - build-erd
+version: 2
 jobs:
   build-erd:
     docker:
