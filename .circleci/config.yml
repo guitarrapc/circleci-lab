@@ -28,7 +28,7 @@ jobs:
             DOCKERIZE_VERSION: v0.3.0
       - run: dockerize -wait tcp://localhost:3306 -timeout 1m
       - run: for inputsql in $(find /root/project/mysql/ -maxdepth 1 -name *.sql); do mysql --defaults-extra-file=/root/project/mysql/db_access.conf circle_test < $inputsql; done
-      - run: cd / && /entrypoint.sh -t mysql -host 127.0.0.1 -port 3306 -u root -db circle_test -s information_schema -hq useSSL\\=false
+      - run: cd / && /entrypoint.sh -t mysql -host 127.0.0.1 -port 3306 -u root -db circle_test -s circle_test -hq useSSL\\=false
       - store_artifacts:
           path: /output
           destination: er
